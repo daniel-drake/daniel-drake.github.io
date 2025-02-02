@@ -1,95 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Stonecliff Maine Coons</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Stonecliff Maine Coons</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Available Kittens</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Breeding Kings and Queens</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
-                </ul>
+<div class="container mt-4">
+    <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="assets/cally1.png" class="d-block w-100" alt="First slide" style="height: 250px; object-fit: cover;">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/cally1.png" class="d-block w-100" alt="Second slide" style="height: 250px; object-fit: cover;">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/cally1.png" class="d-block w-100" alt="Third slide" style="height: 250px; object-fit: cover;">
             </div>
         </div>
-    </nav>
-
-    <header class="bg-primary text-white text-center py-5">
-        <div class="container d-flex align-items-center justify-content-center">
-            <img src="assets/logo1.png" alt="Logo" class="me-3" style="height: 100px;">
-            <div>
-                <h1>Welcome to Stonecliff Maine Coons</h1>
-                <p class="lead">In ancient times cats were worshiped as gods; they have not forgotten this.     -Terry Pratchett</p>
-            </div>
-        </div>
-    </header>
-
-    <div class="container mt-4">
-        <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="assets/cally1.png" class="d-block w-100" alt="First slide">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/cally1.png" class="d-block w-100" alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/cally1.png" class="d-block w-100" alt="Third slide">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
-
-    <div class="container mt-4">
-        <div class="row">
-            <div class="col-md-8">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h2 class="card-title">Blog Post Title</h2>
-                        <p class="card-text">This is a short summary of the blog post. Click below to read more.</p>
-                        <a href="#" class="btn btn-primary">Read More</a>
-                    </div>
-                </div>
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h2 class="card-title">Another Blog Post</h2>
-                        <p class="card-text">A short description of the second blog post.</p>
-                        <a href="#" class="btn btn-primary">Read More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer class="bg-dark text-white text-center py-3 mt-4">
-        <p>&copy; 2025 Stonecliff Maine Coons. All Rights Reserved.</p>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+</div>
