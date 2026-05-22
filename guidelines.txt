@@ -1,0 +1,21 @@
+These are some general guidelines that I use to think about features/content.
+
+"If you can't explain <feature> in 1 sentence without using the terms 'except' or 'but', think hard about what you are doing."
+The idea is the inability to simply describe what are you doing indicates that it is overly complicated, or you really do not understand what you intend to implement.
+
+"If it's not tested it doesn't work."
+Don't make assumptions that simple code is obviously correct because it's not.  You need to prove that something works and figure out under what conditions it fails.
+
+"Technology is a tool not a product. Customers care about outcomes, not how they were achieved."
+I see this all of the time.  Something that looks neat comes out and all the engineers want to play with it.  So they justify it's use in production which is almost never a good idea.  
+
+"Complexity masks fragility."
+Always pick the simplest solution that solves the problem you need to solve to minimize the error paths.
+
+"No single person is good enough to come up with the best solution for complicated prroducts." 
+We work in teams for a reason.  Everyone has different experiences that give them different perspectives.
+Along these lines, write up your solution and have it reviewed before you start implementation.  I've seen this a thousand time where we get a code review that has taken the wrong approach, and the response is "this works and we don't have time to rework it."  
+
+Every line of code you right is a future liability.
+Completing a feature in 500 lines that could have been written in 50 is how technical debt builds up.
+

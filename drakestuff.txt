@@ -1,0 +1,22 @@
+I want to create a web site using bootstrap that is my personal web site.
+I It must work on both mobile and desktop/tablet
+
+Format
+Each Page will have a hero section with the Title "Drake Stuff"
+It will have a nice blue patterned background with white text.  A logo would be nice as well.
+
+Pages
+Main Page: this will have a grid of cards.  ddThe cards will have summary text and a blue botton with white text that says "Read More..."
+When The button is clicked, pull upon the page associated with the card.
+Under the grid of cards, create a section called blog entries 
+each blog entry will span the width of the display and consiste of a picture, text, and button the says "Read More..." that will open a page for the blog entry.
+
+Cards will be in no particular order, About, Contact, Resume, Pictures Gallery, Computers, Micro-controllers/Robots, Farming, 
+
+Ther will be a menu shared by all pages
+The menu is
+	home -> displays home page (index.html)
+	about -> opens about page
+	intersting links
+		submenu of links I will supply later
+
