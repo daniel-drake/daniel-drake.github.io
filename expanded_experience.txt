@@ -1,0 +1,123 @@
+
+Company Network appliance:
+Overview: https://www.netapp.com/pdf.html?item=/media/7413-ds-3231-ontap-unified-data-storage-management.pdf
+Product: High performance, high availability scaled out clustered file server supporting NFS/CIFS/FiberChannel/ISCSI/S3/HTTP(s) data access protocols and a distributed file system.
+  
+Role: Senior Engineer Networking
+Responsibilities:
+*network configuration and validation of
+** ipaddresses
+** physical network ports
+** routes
+*intra-cluster network resiliency
+**used for control-plan and fast path data plane transfers over a switched fabric
+**ensure hardware and infrastructure failures do not cause outages
+**reconfigure to bypass failed components 
+**degrade gracefully  
+*Build diagnostic tools to analyze collected data
+**Wrote a tool to combine logs from the nodes in the cluster to document how they interact.
+*** written in python and then later in go
+*** not unusual to generate files with 14+ million lines
+***example: we can see an ip address move from node1 to node2 and the client connection be re-established.
+**Trace/Profiling viewer
+***A trace is dumped to the logs when an rpc call takes over a certain period of time
+***this trace includes both local and remote function information.
+***can be thousands of lines
+***wrote a python program that extracts the traces from the log files and applies heuristics to identify problematic flows.
+***used ncurses to work inside a terminal.
+**IP address timing
+***written in python, generates web page containing html tables tracking IP addresses and their locations as they move around.  Extracts timing information indicating how long it took to move the address and in cases how long it was offline.
+*Health monitors
+**we have health monitors that project a reliability scale (from reliable, questionable, dead) for different network components.
+**I use this information to morph the network configuration to ensure we are running the best we possible can.
+*System Wide expertise
+**I understand how many of the components work and interact. 
+**I have a strong understanding of the basic building blocks work because early in my career we had to code all of that by hand.
+**I pick off defects that have been bouncing from siloed team to siloed team have a pretty good success rate at diagnosing and fixing them.
+**This includes both user and kernel space code.
+*Reviewer/Designer
+**review code submissions with emphasis on correct approaches to limit adding technical debt.
+**review requirements assigned to us by other teams.
+***very often you need to start a conversation to determine what they actually need and rewrite the requirement.
+*mentor new teams and junior engineers
+
+Role: Engineering Liason to early adopters of clustered ontap
+Responsibilities:
+*Lead Engineer for team that was first point of contact with first customers of clustered ontap
+*End goal was writing documentation for work flows diagnosing different types of problems to hand off to support organization
+*was primary point of contact with the customer
+*data collection, triage, work-around, file defect, follow up with group defect assigned to as well as updating customers
+*working with customers
+**If I'm talking to a customer something bad has happened
+**Customer will be upset
+**Follow the 3 C's, be cool, calm, and collected
+**Emphasize with the customer situation
+**Be authoritative even when you have no idea what is going on. 
+**Start data collection immediately.
+**Be honest.  Customers often hate the support team but trust the engineer on the call.
+*Developed a Read-Only CD based solution for core analysis using GDB and scripts at air-gapped high security sites.
+
+Role: Manager Windows Protocols
+Responsibilities:
+*I was more of a technical manager as I still was writing and reviewing code as a secondary responsibility
+*Tracking/prioritizing features lists
+*scheduling features for releases
+*adjusting content and padding schedules to ensure we met our dates 
+*Once a month all managers would present at a product review
+**needed to generate a slide deck with what tasks were accomplished, what tasks were coming up, and what dates were slipping.  If dates were slipping we needed to have a plan how to account for the slippage.
+**Very hard questions were asked to ensure that upper management had an accurate view of the project.  
+**It wasn't unusual for another manager to say "I don't believe those numbers." It was important to have data to back up your presentation.
+**Admit when you were wrong and come up with a plan to remediate.
+*CIFS read-ahead
+**Detect when windows clients were doing sequential reads and then read-ahead data from the distributed file system to ensure the data was already present for the next client request.
+**Able to complete client request with sub-millisecond latency and transfer data at the line-rate of the network connection.
+
+Company: Spinnaker Networks
+Date Of Employment: 2000-2004
+Role: Software Engineer
+Product: High performance clustered network attached file server on custom hardware
+Overview: blade based architecture where blades contained ASICS, FPGA's and a general purpose cpu.
+*blades were network, file system, and control. Control ran linux while network and file system had no OS.
+*I was hired to implement support for windows based clients.
+*There was a published spec which was a good starting point but was dated and of limited use.
+*Needed to to a clean room reverse engineering to avoid getting sued by Microsoft or Samba (the open source implementation) as we could not violate the GPL.
+*I assembled a team and in 2 years had a limite scope implementation that would cover most of the customer use cases..  
+*Were were bought by Network Appliance
+
+Company: Cellomics
+Date Of Employment: 1997-2000
+Role: Software Engineer
+Product: Arrayscan High Content Cell Analysis Instrument
+Overview: https://www.thermofisher.com/us/en/home/brands/thermo-scientific/cellomics.html
+	  created to convert the custom instrument from Biological Detection Inc, into a product that could be sold at scale.
+Responsibilities:
+*Walked through every different component to identify areas needing reliability improvements, in addition to built in diagnostics and reporting.
+*Came up with a plan to prioritize and scheduled the work.
+*For example, verified the encoders on the stage by comparing measurements from run to run.  Any deviation over a certain amount resulted in a diagnostic test being run
+*We could generated image data at high rate and had to compress and store them locally until we could offload them to a remote file system. 
+*Handled cases where local storage was depleted and needed to gracefulliy degrade. 
+*bought by Fisher Scientific.
+
+Company Biological Detection Inc:
+Date Of Employment: 1994-1997
+Role: Sofware Engineer
+Overview: Automated instrument for multi-wavelength imaging of sub-cellular objects for drug discovery.
+	  Cells would be deposited in each well of a 96 well plate along with chemical compounds.  Flouresent dyes would be applied to different bio markers.  Images would be collected and analyzed
+Responsibilities:
+*Wrote the code to control a 3 axis stage holding 96 well microtiter plates.
+*Wrote the image acquisition code.
+*Wrote the image processing pipeline
+*Wrote the code to control a 2 axis robotic arm used to load and unload plates from the instrument.
+
+Company: Biological Detection Systems
+Date Of Employment: 1990-1994 
+Role: Software Engineer
+Overview: Created multi-wavelength biological imaging systems using fluorescence microscopy techniques labeling cellular and subcellular structures.
+	Product was Called Electronic Photography
+Responsibilities:
+*Implemented support for a 3 axis stage
+*Implemented support for changing optical filters via custom serial controlled hardware
+*Implemented Image acquisition using grayscale peltier cooled ccd cameras to allow very long exposures
+*Implemented Image processing workflows to identify objects and combine images at different wavelengths for amazing pictures.
+Company went out of business
+

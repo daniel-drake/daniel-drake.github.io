@@ -25,7 +25,7 @@
       <img src="media/drake_project_logo.png" alt="Drake Stuff logo" class="hero-logo">
       <div>
         <h1 class="display-4 fw-bold mb-1">Drake Stuff</h1>
-        <p class="lead mb-0">Making the world a better place, one mistake at a time.</p>
+        <p class="lead mb-0">Making the world a better place, 1 mistake at a time.</p>
       </div>
     </div>
   </header>
@@ -102,6 +102,14 @@
       <!-- Tab 1: Development Guidelines -->
       <div class="tab-pane fade show active" id="guidelines-pane" role="tabpanel" aria-labelledby="guidelines-tab">
         <div class="resume-body p-3">
+	  <h5 class="card-title mb-3">&ldquo;It's not quite putting a man on the moon but it's close.&ldquo;</h5>
+	  <p>If customers cannot access data, it can cost a million dollars an hour. Do not let that happen.</p>
+	  <p>I've been on escalations where 20,000 people at a company can't get work done because a bug was hit.</p>
+	  <p>If Yahoo fantasy football stops working, then a lot of people are going to lose money.</p>
+	  <p>If ILM can't render a Star Wars movie, or DreamWorks&rsquo; rendering farm is down, very important people are going to be very upset.</p>
+	  <p></p>
+
+
           <div class="card border-primary border-3 mb-5 mt-5">
             <div class="card-body">
               <h5 class="card-title mb-3">Philosophy: Customer Focus</h5>
@@ -115,15 +123,6 @@
               </ol>
             </div>
           </div>
-
-	  <h5 class="card-title mb-3">&ldquo;It's not quite putting a man on the moon but it's close.&ldquo;</h5>
-	  <p>This summarized the types of products that I've worked on through my entire career.  I've learned the hard way that mistakes are costly.</p>
-	  <ol>
-	    <li>If customers cannot access data, it can cost a million dollars an hour. Do not let that happen.</li>
-	    <li>I've been on escalations where 20,000 people at a company can't get work done because a bug was hit.</li>
-	    <li>If Yahoo fantasy football stops working, then a lot of people are going to lose money.</li>
-	    <li>If ILM can't render a Star Wars movie, or DreamWorks&rsquo; rendering farm is down, very important people are going to be very upset.</li>
- 	  </ol>
 
           <h2>Development Guidelines for Successful Products</h2>
           <p class="text-muted mb-4">General principles for building quality products.</p>
@@ -269,104 +268,87 @@
       <!-- Tab 3: Expanded Experience -->
       <div class="tab-pane fade" id="experience-pane" role="tabpanel" aria-labelledby="experience-tab">
         <div class="resume-body p-3">
-	  <p>I have always gravitated to working on some sort of hardware. I prefer to be working in a lab with hands on hardware..</p>
+	  <p>I have always gravitated to working on some sort of hardware.  I prefer instrumentation control but clustered distributed hardware is a close second.</p>
+	  <p>Working in a lab with my hands dirty and boots on the ground is my happy place.  I am enjoy writing pure software, but there is a certain satisfaction I get from manipulating physical objects.</p>
 
           <h2>Professional Experience</h2>
 	  <p>I have been working at NetApp for 25 years. Network appliance is a global company that sells enterprise grade data storage products. Enterprise grade is 99.999% yearly uptime (5 minutes of down time in a year) as the bare minimum. When our product can't serve data, there are serious consequences.</p>
 
-	  <p>That period started with the acquisition of Spinnaker Networks by NetApp.  I was part of the final due diligence meetings where we had to expose all of the short cuts we took to get the product out. Our first task which took years was to integrate our blade based distributed clustered architecture with the WAFL file system. </p>  
-	  <p>One of the advantages of working for a large company is the ability to switch roles. My resume reflects the three roles I spent the most time in.</p>
+	  <p>That period started with the acquisition of Spinnaker Networks by NetApp.  I was part of the final due diligence meetings where we had to expose all of the short cuts we took to get the product out.  That was not a fun experience. Our first task which took years was to integrate our blade based distributed clustered architecture with the WAFL file system. </p>  
+	  <p>One of the advantages of working for a large company is the ability to switch roles. I cherry picked the interesting roles in my resume.</p>
 
-          <div>
-          <h2>Network Appliance (NetApp)</h2>
-          <p>Product: High performance, high availability, scaled-out clustered file server supporting NFS/CIFS/FiberChannel/iSCSI/S3/HTTP(s) data access protocols and a distributed file system.</p>
-
-          <h3>Senior Engineer &mdash; Networking</h3>
+          <h2>Network Appliance</h2>
+          <h3>Senior Engineer Networking</h3>
+          <p>Responsible for the following items</p>
           <ul>
-            <li>Network configuration and validation of IP addresses, physical network ports, and routes</li>
-            <li>Intra-cluster network resiliency
+            <li>Network configuration
               <ul>
-                <li>Used for control-plane and fast-path data plane transfers over a switched fabric</li>
-                <li>Ensure hardware and infrastructure failures do not cause outages</li>
-                <li>Reconfigure to bypass failed components and degrade gracefully</li>
+                <li>Physical Ports</li>
+                <li>VLANs</li>
+                <li>Link Aggregation (Bonding of Physical Ports)</li>
+                <li>IP Addresses</li>
+                <li>Firewall</li>
+                <li>Routes</li>
               </ul>
             </li>
-            <li>Built diagnostic tools to analyze collected data
+            <li>Resiliency of Customer Facing IP Addresses
               <ul>
-                <li>Log correlation tool (Python, then Go) combining logs from all cluster nodes to document interactions; not unusual to generate files with 14+ million lines</li>
-                <li>Trace/profiling viewer: Python/ncurses program that extracts RPC traces from log files and applies heuristics to identify problematic flows</li>
-                <li>IP address timing tool (Python): generates an HTML page with tables tracking IP address locations as they move around the cluster, including time-offline metrics</li>
+                <li>If the port hosting the IP addresses stops working we need to place them on a different port, possibly on a different node</li>
+                <li>If the node that owns the port hosting the IP addresses stops working we need to place them on a different node</li>
+                <li>Need to ensure the IP address is only hosted on a single port to avoid data corruption</li>
               </ul>
             </li>
-            <li>Health monitors: use reliability scale (reliable / questionable / dead) for network components to morph network configuration for best possible operation</li>
-            <li>System-wide expertise: diagnose and fix defects that bounce between siloed teams; covers both user and kernel space code</li>
-            <li>Review code submissions with emphasis on limiting technical debt; rewrite vague requirements from other teams</li>
-            <li>Architect new features</li>
-            <li>Mentor new teams and junior engineers</li>
+          </ul>
+          <h3>Network Appliance &mdash; Early Adopter Customer Support &mdash; 3 years</h3>
+          <p>Led the support team for early adopters of Clustered ONTAP.</p>
+          <ul>
+            <li>Primary customer contact and liaison</li>
+            <li>Collection and initial triage of defect reports</li>
+            <li>Follow through with defects to resolution</li>
           </ul>
 
-          <h3>Engineering Liaison &mdash; Early Adopter Customer Support</h3>
+          <h3>Network Appliance &mdash; Manager, Windows Protocols &mdash; 4 years</h3>
+          <p>In charge of ability to serve data to Windows clients/servers for Clustered ONTAP, integrating Spinnaker and Network Appliance technologies.</p>
           <ul>
-            <li>Lead engineer for team serving as first point of contact with initial customers of Clustered ONTAP</li>
-            <li>Goal: write diagnostic workflow documentation to hand off to the support organization</li>
-            <li>Primary point of contact with customers: data collection, triage, workarounds, defect filing, customer updates</li>
-            <li>Customer approach: follow the 3 C&rsquo;s (cool, calm, collected); empathize with the situation; be authoritative; start data collection immediately; be honest</li>
-            <li>Developed a read-only CD-based solution for core analysis using GDB and scripts at air-gapped high security sites</li>
+            <li>Generate schedules for features and functionality</li>
+            <li>Track progress of projects and tasks</li>
+            <li>Adjust timelines to meet dates with focus on team cohesion</li>
+          </ul>
+          <p><em>Microsoft uses Clustered ONTAP as their high performance tier in Azure (Azure NetApp Files).</em></p>
+
+          <h3>Spinnaker Networks &mdash; Software Engineer &mdash; 4 years</h3>
+          <p>Startup from founders of Fore Systems creating a very high performance clustered file server.</p>
+          <ul>
+            <li>Assembled team to implement Windows client and server network protocols (CIFS)</li>
+            <li>Led clean-room reverse engineering to avoid Microsoft intellectual property issues</li>
+          </ul>
+          <p><em>Company acquired by Network Appliance.</em></p>
+
+          <h3>Cellomics &mdash; Principal Software Engineer &mdash; 4 years</h3>
+          <p>Company created to productize a customized research instrument into a generally marketable product.</p>
+          <ul>
+            <li>Integrated live cell capability via incubator integration</li>
+            <li>Made all workflows resilient and reproducible</li>
+            <li>Ensured data acquisition and storage pipelines scale for high-throughput operation</li>
+          </ul>
+          <p><em>Company acquired by Fisher Scientific.</em></p>
+
+          <h3>Biological Detection Inc. &mdash; Technical Lead &mdash; 5 years</h3>
+          <p>CMU spin-off to create an instrument for automated drug discovery using high-resolution imaging of subcellular structures, particularly DNA.</p>
+          <ul>
+            <li>Controlled robotic arms for 96-well plate handling</li>
+            <li>Implemented micro-pipette control systems for chemical compound dispensing</li>
+            <li>Designed 3-axis stage control, microscope control, and image acquisition/processing pipelines</li>
           </ul>
 
-          <h3>Manager &mdash; Windows Protocols</h3>
+          <h3>Biological Detection Systems &mdash; Software Engineer &mdash; 4 years</h3>
+          <p>CMU startup to create multi-wavelength fluorescence imaging instrument for acquisition and processing of biological cell and subcellular structures.</p>
           <ul>
-            <li>Technical manager: still writing and reviewing code as a secondary responsibility</li>
-            <li>Tracked and prioritized feature lists; scheduled features for releases; adjusted content and schedules to meet dates</li>
-            <li>Monthly product reviews with upper management: presented completed work, upcoming tasks, and slippage plans backed by data</li>
-            <li>CIFS read-ahead: detected sequential client reads and prefetched data from the distributed file system, achieving sub-millisecond latency at line-rate network throughput</li>
+            <li>Controlled 3-axis stage to locate and position samples</li>
+            <li>Managed custom hardware for wavelength filter changes</li>
+            <li>Implemented image acquisition and processing workflows</li>
           </ul>
 
-          <h2>Spinnaker Networks</h2>
-          <p>Product: High performance clustered network-attached file server on custom hardware &mdash; blade-based architecture with ASICs, FPGAs, and general-purpose CPUs across network, file system, and control blades.</p>
-          <h3>Software Engineer</h3>
-          <ul>
-            <li>Assembled and led a team to implement Windows client (CIFS/SMB) support for the clustered file server</li>
-            <li>Conducted clean-room reverse engineering of CIFS/SMB to avoid Microsoft and GPL (Samba) intellectual property issues</li>
-            <li>Delivered a limited-scope implementation in two years covering most customer use cases</li>
-            <li>Company acquired by Network Appliance</li>
-          </ul>
-
-          <h2>Cellomics</h2>
-          <p>Product: ArrayScan High Content Cell Analysis Instrument &mdash; created to convert the custom instrument from Biological Detection Inc. into a scalable commercial product.</p>
-            <p>Company acquired by Fisher Scientific</p>
-          <h3>Software Engineer</h3>
-          <ul>
-            <li>Audited every component to identify reliability issues and missing diagnostics; prioritized and scheduled remediation work</li>
-            <li>Verified stage encoders by comparing measurements across runs; deviations above threshold triggered diagnostic tests automatically</li>
-            <li>Built image compression and local storage pipeline for high-throughput data acquisition; handled graceful degradation when local storage was depleted</li>
-          </ul>
-
-          <h2>Biological Detection Inc.</h2>
-          <p>Automated instrument for multi-wavelength imaging of sub-cellular objects for drug discovery. Cells deposited in 96-well plates with chemical compounds and fluorescent dyes; images collected and analyzed.</p>
-	  <p>CMU Spinoff</p>
-          <h3>Software Engineer</h3>
-          <ul>
-            <li>Wrote control software for a 3-axis stage holding 96-well microtiter plates</li>
-            <li>Wrote image acquisition code and image processing pipeline</li>
-            <li>Wrote control software for a 2-axis robotic arm used to load and unload plates from the instrument</li>
-          </ul>
-
-          <h2>Biological Detection Systems</h2>
-          <p>Multi-wavelength biological imaging systems using fluorescence microscopy to label cellular and subcellular structures (product known as Electronic Photography).</p>
-	  <p>CMU Startup</p>
-          <p>Company went out of business</p>
-          <h3>Software Engineer</h3>
-	  <p>One of two programmers initially hired</p>
-          <ul>
-            <li>Implemented 3-axis stage control and custom serial-controlled optical filter hardware</li>
-            <li>Image acquisition using grayscale Peltier-cooled CCD cameras to support very long exposures</li>
-            <li>Image processing workflows to identify objects and combine multi-wavelength images</li>
-            <li>All user interface until we hired an expert.</li>
-	    <li>Training and support for partners and dealers.</li>
-	    <li>Only IT support for networking, storage, and backups</li>
-          </ul>
-          </div>
         </div>
       </div>
 
@@ -386,14 +368,5 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    document.querySelectorAll('#resumeTabs .nav-link').forEach(function(tab) {
-      tab.addEventListener('keydown', function(e) {
-        if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(e.key)) {
-          e.stopImmediatePropagation();
-        }
-      }, true);
-    });
-  </script>
 </body>
 </html>
